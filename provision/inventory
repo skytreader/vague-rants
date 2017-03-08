@@ -1,0 +1,2 @@
+[local]
+messi ansible_host=10.11.4.128

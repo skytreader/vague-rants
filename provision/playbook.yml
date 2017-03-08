@@ -1,0 +1,8 @@
+---
+- hosts: messi
+  vars:
+    http_port: 80
+  remote_user: root
+  tasks:
+  - name: install htop
+    apt: name=htop state=latest
