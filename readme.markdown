@@ -16,7 +16,7 @@ other OSes is definitely possible but is not covered here.
 your machine.** This is followed by a discussion in normal font which will 
 describe in better detail a way to achieve said goal for Ubuntu machines.
 
-1. **Install Ansible.** Install (virtualenv)[https://github.com/brainsik/virtualenv-burrito].
+1. **Install Ansible.** Install [virtualenv](https://github.com/brainsik/virtualenv-burrito).
 Create a virtualenv for this (`mkvirtualenv vague-rants`) and install ansible
 (`pip install ansible==2.7.0`).
 1. **Install Vagrant.** You can download a Vagrant binary [here](https://www.vagrantup.com/downloads.html).
