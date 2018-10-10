@@ -6,3 +6,4 @@
   tasks:
   - name: install htop
     apt: name=htop state=latest
+    become: true
