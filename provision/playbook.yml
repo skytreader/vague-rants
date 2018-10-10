@@ -4,6 +4,6 @@
     http_port: 80
   remote_user: vagrant
   tasks:
-  - name: install htop
-    apt: name=htop state=latest
+  - name: install tree
+    apt: name=tree state=latest
     become: true
