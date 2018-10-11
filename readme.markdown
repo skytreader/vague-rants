@@ -39,7 +39,3 @@ root of this repo.
 1. **Copy your host _public_ key into the authorized keys of your Vagrant VM.**
 Do `vagrant ssh` to get into your Vagrant VM and then edit `~/.ssh/authorized_keys`.
 Copy-paste your public key into the bottom of this file.
-
-## Documentation
-
-- [Ansible inventory file](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
