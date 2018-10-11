@@ -36,9 +36,60 @@ making the task do something.
 
 1. At this point, the `tree` command in installed in your remote machine. How do
 you _uninstall_ `tree` using Ansible?
-1. What do you think will happen if you run the playbook to uninstall `tree`
+2. What do you think will happen if you run the playbook to uninstall `tree`
 when `tree` is not present? Or if you run the playbook to install `tree` when
 `tree` is already present?
+3. Explore the file module and make it so that tree will display the following
+structure when invoked at the home directory of your remote machine:
+
+```
+vagrant@vagrant:~$ tree
+.
+└── the-c-programming-language
+    ├── arrays
+    ├── hello-world
+    │   └── hello.txt
+    ├── pointers
+    └── structures
+
+5 directories, 1 file
+
+```
+
+Also, `~/the-c-programming-language/hello-world/hello.txt` should have the
+contents "Hello World".
+
+## Rerunning playbooks
+
+Ansible is idempotent (unless you use the [command module](https://docs.ansible.com/ansible/2.5/modules/command_module.html)),
+which means that repeatedly running a playbook would result in the same machine
+state. However, sometimes, an error might occur in the midst of running a
+playbook and you need to rerun the playbook after (maybe) debugging the error.
+While it is safe to let Ansible run through the tasks it has already done, it
+might be too time consuming for you to wait for Ansible to double check on the
+machine state.
+
+Ansible provides a couple of ways to save you time. It has the `--start-at-task`
+flag:
+
+```
+  --start-at-task=START_AT_TASK
+                          start the playbook at the task matching this name
+
+```
+
+And it also provides `.retry` files when an error occurs which can be invoked
+with the `--limit` flag:
+
+```
+  -l SUBSET, --limit=SUBSET
+                          further limit selected hosts to an additional pattern
+```
+
+**Exercise: ** Make the playbook you created for Exercise 3 above fail at some
+point and try to rerun it without having to go through all the preceeding steps.
+
+## Style guidelines: Looping
 
 ## Documentation
 

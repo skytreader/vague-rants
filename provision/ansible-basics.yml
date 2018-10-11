@@ -1,0 +1,43 @@
+---
+- hosts: messi
+  remote_user: vagrant
+  tasks:
+  - name: install tree
+    apt: name=tree state=latest
+    become: true
+
+  - name: Create directory the-c-programming-language
+    file: path=/home/vagrant/the-c-programming-language state=directory
+
+  - name: Create subdirectory hello-world
+    file:
+      path: /home/vagrant/the-c-programming-language/hello-world
+      state: directory
+
+  - name: Create subdirectory arrays
+    file:
+      path: /home/vagrant/the-c-programming-language/arrays
+      state: directory
+
+  - name: Create subdirectory pointers
+    file:
+      path: /home/vagrant/the-c-programming-language/pointers
+      state: directory
+
+  - name: Create subdirectory structures
+    file:
+      path: /home/vagrant/the-c-programming-language/structures
+      state: directory
+
+  - name: Create hello.txt
+    file:
+      # path: /home/vagrant/the-c-programming-language/hello-world/hello.txt
+      path: /home/vagrant/the-c-programming-language/hello-world/hello.txt
+      state: touch
+
+  - name: Hello World
+    lineinfile:
+      dest: /home/vagrant/the-c-programming-language/hello-world/hello.txt
+      line: "Hello World"
+      state: present
+      regexp: "Hello World"
