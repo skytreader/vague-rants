@@ -1,7 +1,5 @@
 ---
 - hosts: messi
-  vars:
-    http_port: 80
   remote_user: vagrant
   tasks:
   - name: install tree
