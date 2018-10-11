@@ -36,6 +36,8 @@ machines. They are, however more structured than your usual shell script.
 modular and dependencies are clearly defined.
 - Used correctly, it provides replicable steps to set-up your desired
 environment.
+- Ansible is idempotent: no matter how many times you run an Ansible playbook,
+it will result to an identical machine state.
 
 ### Disadvantages
 
