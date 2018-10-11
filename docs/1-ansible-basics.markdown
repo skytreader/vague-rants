@@ -86,10 +86,20 @@ with the `--limit` flag:
                           further limit selected hosts to an additional pattern
 ```
 
-**Exercise: ** Make the playbook you created for Exercise 3 above fail at some
+**Exercise:** Make the playbook you created for Exercise 3 above fail at some
 point and try to rerun it without having to go through all the preceeding steps.
 
 ## Style guidelines: Looping
+
+You will notice that the given sample answer to Exercise 3 above has a lot of
+repeated elements. While this works, this could quickly get tedious and hard to
+manage! Not to mention that repeated elements introduces opportunities for error
+in your code; imagine mistyping the name of the 28th directory out of 100 you
+need to create. Fortunately, Ansible provides us with constructs to _refactor_
+our playbooks.
+
+**Exercise:** Have a look at [Ansible loops](https://docs.ansible.com/ansible/2.5/user_guide/playbooks_loops.html)
+and try to rewrite the `provision/ansible-basics.yml` playbook with less lines.
 
 ## Documentation
 

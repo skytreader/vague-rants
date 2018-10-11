@@ -31,7 +31,6 @@
 
   - name: Create hello.txt
     file:
-      # path: /home/vagrant/the-c-programming-language/hello-world/hello.txt
       path: /home/vagrant/the-c-programming-language/hello-world/hello.txt
       state: touch
 
