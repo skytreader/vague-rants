@@ -25,7 +25,7 @@ machine.
 
 `vagrant ssh` SSH into a running VM as the `vagrant` user.
 
-`vagrant down` Gracefully terminates a running VM.
+`vagrant halt` Gracefully terminates a running VM.
 
 ## Why Ansible?
 
