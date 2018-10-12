@@ -1,5 +1,7 @@
 # 0 Getting Started
 
+**Motivation:** Ansible is your insurance policy against having a [mystery server](https://www.reddit.com/r/sysadmin/comments/9n48lo/have_you_ever_inherited_the_mystery_server/).
+
 ## Terminologies
 
 The _host_ or _host machine_ is the computer you will be running Ansible from.
