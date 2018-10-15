@@ -34,8 +34,8 @@ BIOS to disable UEFI/SecureBoot.
 1. **Generate SSH keys for your host machine, if you haven't already.** You can
 follow [this guide](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1604)
 from DigitalOcean.
-1. **Spin up the Vagrant box for this repo.** Just do `vagrant up` while at the
-root of this repo.
+1. **Spin up the Vagrant box(es) for this repo.** Just do `vagrant up` while at
+the directories of the VMs (clue: they are in the `vms` directory).
 1. **Copy your host _public_ key into the authorized keys of your Vagrant VM.**
 Do `vagrant ssh` to get into your Vagrant VM and then edit `~/.ssh/authorized_keys`.
 Copy-paste your public key into the bottom of this file.

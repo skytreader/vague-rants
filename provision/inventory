@@ -1,2 +1,4 @@
 [local]
 messi ansible_host=10.11.4.128
+coutinho ansible_host=10.11.4.127
+rakitic ansible_host=10.11.4.126

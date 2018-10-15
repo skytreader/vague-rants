@@ -34,12 +34,14 @@ making the task do something.
 
 ## Exercises
 
-1. At this point, the `tree` command in installed in your remote machine. How do
+1. At this point, the `tree` command in installed in your Messi VM. How do
 you _uninstall_ `tree` using Ansible?
 2. What do you think will happen if you run the playbook to uninstall `tree`
 when `tree` is not present? Or if you run the playbook to install `tree` when
 `tree` is already present?
-3. Explore the file module and make it so that tree will display the following
+3. How do make it so that the playbook will also install the `tree` command in
+the two other VMs?
+4. Explore the file module and make it so that tree will display the following
 structure when invoked at the home directory of your remote machine:
 
 ```
@@ -86,7 +88,7 @@ with the `--limit` flag:
                           further limit selected hosts to an additional pattern
 ```
 
-**Exercise:** Make the playbook you created for Exercise 3 above fail at some
+**Exercise:** Make the playbook you created for Exercise 4 above fail at some
 point and try to rerun it without having to go through all the preceeding steps.
 
 ## Style guidelines: Looping

@@ -30,7 +30,8 @@ machine.
 ## Why Ansible?
 
 Ansible tasks and playbooks are, basically, shell scripts for setting up
-machines. They are, however more structured than your usual shell script.
+machines. They are, however more structured than your usual shell script and
+pack features that make it ideal for cluster management.
 
 ### Advantages
 
@@ -49,11 +50,11 @@ documentation).
 
 ## Demo
 
-1. SSH into your VM and issue the `tree` command. You should get an error that
+1. SSH into the Messi VM and issue the `tree` command. You should get an error that
 it does not exist.
 
 ```
-vague-rants$ vagrant ssh
+vague-rants/vms/messi$ vagrant ssh
 Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-29-generic x86_64)
 
 ...
@@ -64,10 +65,10 @@ vagrant@vagrant:~$ tree
 vagrant@vagrant:~$
 ```
 
-2. Exit from your SSH session. From your host machine, do
+2. Outside your SSH session, in your host machine, do
 
 ```
-ansible-playbook -i provision/inventory provision/playbook.yml
+vague-rants$ ansible-playbook -i provision/inventory provision/playbook.yml
 ```
 
 **Note:** If this is your first time running ansible-playbook, you might be asked
