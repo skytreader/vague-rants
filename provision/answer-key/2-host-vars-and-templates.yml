@@ -9,8 +9,9 @@
     become: true
 
   - name: create user with name similar to hostname
+    become: true
     user:
-      name: {{ hostname }}
+      name: "{{ hostname }}"
 
   - name: Create subdirectories for the-c-programming-language
     file:
@@ -29,5 +30,5 @@
 
   - name: Hello World
     template:
-      src: provision/templates/hello-host.j2
+      src: hello-host.j2
       dest: /home/vagrant/the-c-programming-language/hello-world/hello.txt

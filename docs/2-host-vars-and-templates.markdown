@@ -34,6 +34,10 @@ Most server applications are configurable via config text files. As said above,
 in a cluster, it is not uncommon to find them differ in subtle ways while being
 generally similar in structure. This makes them a good candidate for templating.
 
+A template has a host of parameters but perhaps the most common is `src` and
+`dest`. `src` is evaluated relative to the directory containing the playbook.
+It is recommended to always specify absolute paths for `dest`.
+
 Note that you can still refer to host vars inside of templates.
 
 **Demonstration/Exercise:** Your remote should have (had) the text file
