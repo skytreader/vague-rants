@@ -1,0 +1,12 @@
+---
+- hosts: messi
+  remote_user: vagrant
+  vars:
+    hostname: messi
+  tasks:
+  - name: install tree
+    apt: name=tree state=latest
+    become: true
+  - name: create user with name similar to hostname
+    user:
+      name: {{ hostname }}

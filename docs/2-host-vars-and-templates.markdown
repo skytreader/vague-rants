@@ -6,3 +6,7 @@ custom differences. For instance, you may want a cluster where each node has the
 hostname configured. At this point, you know how to make a cluster that is
 _exactly_ the same with each other. In this section, you will learn how to make
 node-specific changes.
+
+## Host Vars
+
+Host vars are (for now) defined in the playbook in its own section.
