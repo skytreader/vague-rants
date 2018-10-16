@@ -13,6 +13,9 @@ will be configuring via Ansible. The Vagrant VM specified in this tutorial is
 an example of a remote machine (even if it is coexisting in the same hardware
 as your host machine or if it is hosted by the same host machine).
 
+A _cluster_ is a collection of remote machines, often with a similar purpose to
+each other. A _node_ is any remote machine that is part of a cluster.
+
 ## Vagrant commands
 
 All vagrant commands assume the existence of a Vagrantfile in the directory
