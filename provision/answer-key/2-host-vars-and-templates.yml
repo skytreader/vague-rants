@@ -7,6 +7,27 @@
   - name: install tree
     apt: name=tree state=latest
     become: true
+
   - name: create user with name similar to hostname
     user:
       name: {{ hostname }}
+
+  - name: Create subdirectories for the-c-programming-language
+    file:
+      path: "/home/vagrant/the-c-programming-language/{{ item }}"
+      state: directory
+    loop:
+      - hello-world
+      - arrays
+      - pointers
+      - structures
+
+  - name: Create hello.txt
+    file:
+      path: /home/vagrant/the-c-programming-language/hello-world/hello.txt
+      state: touch
+
+  - name: Hello World
+    template:
+      src: provision/templates/hello-host.j2
+      dest: /home/vagrant/the-c-programming-language/hello-world/hello.txt

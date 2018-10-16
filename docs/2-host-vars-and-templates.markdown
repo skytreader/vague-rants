@@ -27,7 +27,7 @@ name similar to the hostname you can do as follows
 ## Templating
 
 We have already introduced the `lineinfile` module. While this lets us write to
-files, it is awkward what we want to write something more than one line. Thus,
+files, it is awkward when we want to write something more than one line. Thus,
 Ansible has the [template module](https://docs.ansible.com/ansible/latest/modules/template_module.html).
 
 Most server applications are configurable via config text files. As said above,
@@ -52,4 +52,5 @@ work on your first attempt.
 ## Documentation
 
 - [Ansible Templating Doc](https://docs.ansible.com/ansible/2.6/user_guide/playbooks_templating.html)
+- [Ansible Template Module Doc](https://docs.ansible.com/ansible/latest/modules/template_module.html)
 - [Jinja2 Homepage](http://jinja.pocoo.org/)
