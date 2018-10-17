@@ -35,3 +35,23 @@ servers. Thankfully, Ansible also accepts a group name as an argument to
 ---
 - hosts: local
 ```
+
+## Ansible roles
+
+Often, your infrastructure is not just made up of one cluster/one type of server
+configuration. You may want to dedicate a certain cluster for a particular task:
+databases are read/write-intensive so you may want them to be separate from your
+web servers. This would mean a different kind of configuration altogether.
+
+The customized configuration discussed in the previous section can be described
+as _same commands, different arguments_. In contrast, the custom configuration
+we want for different clusters will have different commands from the get go
+(and, of course, different arguments).
+
+Ansible lets you define roles for your clusters specifically for this purpose.
+Note that unlike the mostly free-form directory structure we have been using so
+far, using Ansible roles assumes a certain directory structure.
+
+## Documentation
+
+- [Ansible Roles](https://docs.ansible.com/ansible/2.5/user_guide/playbooks_reuse_roles.html)
