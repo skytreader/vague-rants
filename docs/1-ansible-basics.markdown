@@ -32,7 +32,7 @@ information on where and how to run the said tasks.
 In turn, a _task_ is divided into two parts: the _name_ and the _module_ for
 making the task do something.
 
-## Exercises
+### Exercises
 
 1. At this point, the `tree` command in installed in your Messi VM. How do
 you _uninstall_ `tree` using Ansible?
@@ -88,8 +88,10 @@ with the `--limit` flag:
                           further limit selected hosts to an additional pattern
 ```
 
-**Exercise:** Make the playbook you created for Exercise 4 above fail at some
-point and try to rerun it without having to go through all the preceeding steps.
+### Exercise
+
+Make the playbook you created for Exercise 4 above fail at some point and try to
+rerun it without having to go through all the preceeding steps.
 
 ## Style guidelines: Looping
 
@@ -100,7 +102,9 @@ in your code; imagine mistyping the name of the 28th directory out of 100 you
 need to create. Fortunately, Ansible provides us with constructs to _refactor_
 our playbooks.
 
-**Exercise:** Have a look at [Ansible loops](https://docs.ansible.com/ansible/2.5/user_guide/playbooks_loops.html)
+### Exercise
+
+Have a look at [Ansible loops](https://docs.ansible.com/ansible/2.5/user_guide/playbooks_loops.html)
 and try to rewrite the `provision/ansible-basics.yml` playbook with less lines.
 
 ## Documentation
