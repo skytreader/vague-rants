@@ -36,6 +36,12 @@ Ansible tasks and playbooks are, basically, shell scripts for setting up
 machines. They are, however more structured than your usual shell script and
 pack features that make it ideal for cluster management.
 
+The most basic Ansible feature which makes it ideal for cluster management is
+_remote execution_. That is, you usually have your Ansible playbooks in one
+machine and, from that machine, run those playbooks to set-up any number of
+other/remote machines. (Do not be confused as in this tutorial, everything
+actually runs under one host OS.)
+
 ### Advantages
 
 - Unlike shell scripts, Ansible playbooks can be structured such that they are
