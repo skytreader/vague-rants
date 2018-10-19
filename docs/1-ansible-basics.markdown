@@ -61,6 +61,24 @@ vagrant@vagrant:~$ tree
 Also, `~/the-c-programming-language/hello-world/hello.txt` should have the
 contents "Hello World".
 
+## Behind the scenes
+
+Invoke your `ansible-playbook` command with the `-vvv` flag. That is,
+
+```
+ansible-playbook -i provision/inventory -vvv provision/playbook.yml
+```
+
+You will notice that each ansible task is actually multiple `ssh` calls behind
+the scenes. What this does is to copy a Python script to the remote machine and
+run it. (Note that this Python script is actually the _module_ specified in the
+task YAML.)
+
+What this implies is that it is good practice to invoke ansible from a machine
+that is _in the same network_ as the remote machines it will set-up. This
+reduces latency and for long-running jobs, lessens the probability of network
+time outs.
+
 ## Rerunning playbooks
 
 Ansible is idempotent (unless you use the [command module](https://docs.ansible.com/ansible/2.5/modules/command_module.html)),
