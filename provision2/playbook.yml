@@ -2,4 +2,4 @@
 - hosts: local
   remote_user: vagrant
   roles:
-    - tutorial_basic
+    - role: tutorial_basic

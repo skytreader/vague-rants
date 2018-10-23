@@ -60,6 +60,67 @@ but they are now replaced with `roles`. And then in each role's subdirectory, we
 have the `tasks` subdirectory which now contains the steps as outlined in the
 `tasks` section of our old playbook!
 
+### Exercise
+
+Do you see any problems with the following playbook?
+
+```yaml
+---
+- hosts: local
+  roles:
+    - install_needed_programs
+    - configure_needed_programs
+```
+
+## Tags
+
+Consider the following scenario: you are setting up a DB server from scratch and
+you have structured your playbook into roles that do as follows:
+
+- Install and configure your DB of choice.
+- Define firewall rules that restrict which servers can connect to your DB.
+- Create user accounts for people who are authorized to SSH into the DB server.
+
+(Notice that these "roles" are independent of each other: you can define
+firewall rules even if the DB is not yet installed and you can create user
+accounts even if the firewall is not yet configured.)
+
+However, during the course of your server's lifetime, several things can happen
+that would require you to reprovision your server:
+
+a. Your DB of choice might release upgrades which you need to install. Or you
+might need to reconfigure your DB so that it can better handle the usage it is
+subjected to.
+b. New servers that need to connect to the DB might be introduced into your
+cluster.
+c. People come and leave so you need to add and revoke access to users.
+
+Each of these scenarios entail reprovisioning your server to accommodate any one
+of these changes. (**Remember:** all these scenarios do not happen all at once;
+they may happen independently throughout the course of your server's uptime.)
+Rerunning the playbook will solve our problems but inefficiently; you do not
+want to go through a lengthy installation/configuration phase if all you want
+is to remove the SSH credentials of one user.
+
+Ansible handles situations like this via _tags_. Tags are a way to further
+modularize your playbook. On top of this, you can use tags to selectively run
+parts of your playbook.
+
+In the given scenario above, we can tag the playbook as follows,
+
+```yaml
+---
+- hosts: local
+  roles:
+    - role: install_and_configure_db
+      tags: db_installation
+    - role: define_firewall
+      tags: firewall, administrative
+    - role: create_user_accounts
+      tags: ssh, administrative
+```
+
 ## Documentation
 
 - [Ansible Roles](https://docs.ansible.com/ansible/2.5/user_guide/playbooks_reuse_roles.html)
+- [Ansible Tags](https://docs.ansible.com/ansible/devel/user_guide/playbooks_tags.html)
