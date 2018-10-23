@@ -18,7 +18,7 @@ rakitic ansible_host=10.11.4.126
 ```
 
 Given your basic playbook, how can you install `tree` on all your hosts with
-just on invocation of `ansible-playbook`?
+just one invocation of `ansible-playbook`?
 
 You can specify multiple hosts in your playbook like so
 
@@ -51,6 +51,14 @@ we want for different clusters will have different commands from the get go
 Ansible lets you define roles for your clusters specifically for this purpose.
 Note that unlike the mostly free-form directory structure we have been using so
 far, using Ansible roles assumes a certain directory structure.
+
+### Relationship between plain playbooks and roles
+
+Notice that the roles directory structure just rearranges the plain playbooks we
+are acquainted with so far: in the playbook, we used to have the `tasks` defined
+but they are now replaced with `roles`. And then in each role's subdirectory, we
+have the `tasks` subdirectory which now contains the steps as outlined in the
+`tasks` section of our old playbook!
 
 ## Documentation
 
