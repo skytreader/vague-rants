@@ -1,0 +1,8 @@
+[production]
+messi ansible_host=10.11.4.128
+
+[staging]
+coutinho ansible_host=10.11.4.127
+
+[development]
+rakitic ansible_host=10.11.4.126
