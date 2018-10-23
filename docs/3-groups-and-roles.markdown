@@ -88,12 +88,12 @@ accounts even if the firewall is not yet configured.)
 However, during the course of your server's lifetime, several things can happen
 that would require you to reprovision your server:
 
-a. Your DB of choice might release upgrades which you need to install. Or you
+- Your DB of choice might release upgrades which you need to install. Or you
 might need to reconfigure your DB so that it can better handle the usage it is
 subjected to.
-b. New servers that need to connect to the DB might be introduced into your
+- New servers that need to connect to the DB might be introduced into your
 cluster.
-c. People come and leave so you need to add and revoke access to users.
+- People come and leave so you need to add and revoke access to users.
 
 Each of these scenarios entail reprovisioning your server to accommodate any one
 of these changes. (**Remember:** all these scenarios do not happen all at once;
