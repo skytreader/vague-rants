@@ -120,6 +120,29 @@ In the given scenario above, we can tag the playbook as follows,
       tags: ssh, administrative
 ```
 
+## Specifying dependencies
+
+From a previous exercise, you should be aware that the order in which roles are
+declared in a playbook is not a guarantee of the order in which these roles will
+be executed. Unfortunately, in real-world systems, you will often have roles
+that make an assumption about the state of the system (i.e., that another role
+has already ran prior to the current role). The role is said to have a
+_dependency_.
+
+Dependencies are declared via the `meta` directory inside a role directory.
+Inside `meta` you can specify the role's dependencies via a `main.yml` with
+the following contents:
+
+```yaml
+---
+dependencies:
+  - role: dependency_installation
+    tags: dependencies
+```
+
+The semantics of the fields of this file is similar to what we have discussed so
+far.
+
 ## Documentation
 
 - [Ansible Roles](https://docs.ansible.com/ansible/2.5/user_guide/playbooks_reuse_roles.html)
