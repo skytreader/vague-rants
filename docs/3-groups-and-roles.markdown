@@ -60,6 +60,9 @@ but they are now replaced with `roles`. And then in each role's subdirectory, we
 have the `tasks` subdirectory which now contains the steps as outlined in the
 `tasks` section of our old playbook!
 
+Similarly, the variables you need in your playbooks are inside the `vars`
+subdirectory of your role.
+
 ### Exercise
 
 Do you see any problems with the following playbook?
